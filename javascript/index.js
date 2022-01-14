@@ -127,14 +127,59 @@ broccoli.push(addStep9);
 
 async function makeBroccoli() {
   
-  for (let i=0; i < 8; i++) {
-    await obtainInstruction('broccoli', [i])
-
-    document.querySelector('#broccoli').innerHTML += `<li>${broccoli[i]}</li>`
-  }
+ /*  const step0 = await obtainInstruction('broccoli', 0);
+  document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`
   
-}
+  const step1 = await obtainInstruction('broccoli', 1);
+  document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`
+ 
+  const step2 = await obtainInstruction('broccoli', 2);
+  document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`
+ 
+  const step3 = await obtainInstruction('broccoli', 3);
+  document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`
+ 
+  const step4 = await obtainInstruction('broccoli', 4);
+  document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`
+ 
+  const step5 = await obtainInstruction('broccoli', 5);
+  document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`
+ 
+  const step6 = await obtainInstruction('broccoli', 6);
+  document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`
+ 
+  const step7 = await obtainInstruction('broccoli', 7);
+  document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`
+ 
+  const step8 = await obtainInstruction('broccoli', 8);
+  document.querySelector("#broccoli").innerHTML += `<li>${step8}</li>`
+ 
+  const Step9 = await obtainInstruction('broccoli', 9);
+  document.querySelector("#broccoli").innerHTML += `<li>${step9}</li>`
+  
 
+  //Not correct way to run this because we are accessing directly into the data.js, which 
+  //we do not have access to, we should access the data via the function obtainInstruction itself
+  //if the broccoli that we are trying to get has been changed, we will not get any results
+  //but if we use the function, who will access the data for us, it will always be accessible
+
+//for (let i=0; i < 8; i++) {
+  
+  //await obtainInstruction('broccoli', [i]);
+
+    //document.querySelector('#broccoli').innerHTML += `<li>${broccoli[i]}</li>` 
+  //}
+   
+//}   */
+
+//Correct way:
+for (let i = 0; i < 8; i++){
+
+  const step = await obtainInstruction('broccoli', i);
+
+  document.querySelector('#broccoli').innerHTML += `<li>${step}</li>`
+  }
+}
 makeBroccoli()
 
 // Bonus 2 - Promise all
