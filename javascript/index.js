@@ -45,6 +45,7 @@ getInstruction('mashedPotatoes', 0, (step0) => {
           document.querySelector("#mashedPotatoes").innerHTML += `<li>${step4}</li>`;
           getInstruction('mashedPotatoes', 5, (step5) => {
             document.querySelector("#mashedPotatoes").innerHTML += `<li>${step5}</li>`;
+            document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
             /* let addStep6 = "Mashed potatoes are ready!";
 
             mashedPotatoes.push(addStep6); ---> did not work and have to move it outside above
@@ -97,7 +98,7 @@ obtainInstruction('steak', 0)
                                    obtainInstruction('steak', 8)
                                     .then( (step8) => {
                                       document.querySelector("#steak").innerHTML += `<li>${step8}</li>`
-                           
+                                      document.querySelector("#steakImg").removeAttribute("hidden");
                           })
                           .catch((err) => console.log((err)));
                      })
@@ -178,6 +179,7 @@ for (let i = 0; i < 8; i++){
   const step = await obtainInstruction('broccoli', i);
 
   document.querySelector('#broccoli').innerHTML += `<li>${step}</li>`
+  document.querySelector("#broccoliImg").removeAttribute("hidden");
   }
 }
 makeBroccoli()
